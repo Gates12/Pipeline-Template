@@ -6,8 +6,7 @@
 trigger:
 - main
 
-pool:
-  vmImage: my-Mac
+pool: my-Mac
 
 steps:
 - task: ArchiveFiles@2
