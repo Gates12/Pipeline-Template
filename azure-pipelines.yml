@@ -16,4 +16,10 @@ steps:
     archiveType: 'zip'
     archiveFile: '$(System.DefaultWorkingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
-
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'web-app-connection'
+    appType: 'webAppLinux'
+    appName: 'Static-Web'
+    package: '$(System.DefaultWorkingDirectory)/*.zip'
+    runtimeStack: 'DOTNETCORE:8.0'
